@@ -32,7 +32,42 @@ public class DeckTest {
     }
 
     @Test
+    /**
+     * Makes sure that after the shuffle, the Card objects in the ArrayList are not in the
+     * same order.
+     */
     public void shuffleTest() {
+        // Make a shallow copy of the ArrayList representing the deck.
+        Deck d = new Deck();
+        ArrayList<Card> unshuffled = (ArrayList<Card>) d.getArrayList().clone();
+
+        d.shuffle(1000);
+        ArrayList<Card> shuffled = d.getArrayList();
+
+        boolean isSame = true;
+
+        for (int i = 0; i < d.cardsLeft(); i++) {
+            if (unshuffled.get(i) != shuffled.get(i)) {
+                isSame = false;
+                break;
+            }
+        }
+
+        assertFalse(isSame);
+    }
+
+    @Test
+    /**
+     * Makes sure that after the shuffle, the same number of cards still exist in the deck.
+     */
+    public void shuffleSameNumberOfCardsTest() {
+        Deck d = new Deck();
+        int size = d.cardsLeft();
+
+        d.shuffle(10000);
+        int sizeAfterShuffle = d.cardsLeft();
+
+        assertEquals(size, sizeAfterShuffle);
     }
 
     @Test
