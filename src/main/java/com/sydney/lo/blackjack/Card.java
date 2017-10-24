@@ -10,4 +10,8 @@ public class Card {
     public Card(int cardId) {
         card = CardType.fromInteger(cardId);
     }
+
+    public int getCardId() {
+        return card.getCardId();
+    }
 }
