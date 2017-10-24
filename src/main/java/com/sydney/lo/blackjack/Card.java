@@ -14,4 +14,8 @@ public class Card {
     public int getCardId() {
         return card.getCardId();
     }
+
+    public int getCardValue() {
+        return card.getCardValue();
+    }
 }
