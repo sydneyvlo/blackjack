@@ -48,16 +48,22 @@ public class Deck {
     }
 
     /**
-     * Takes the ArrayList of Card objects and randomly swaps the elements around.
+     * Shuffles the elements in the ArrayList of Card objects in the deck class.
      *
-     * @param deck An ArrayList of Card objects.
+     * @param numberOfSwaps The number of random swaps performed on the ArrayList of Card objects.
      */
-    public void shuffle(ArrayList<Card> deck) {
+    public void shuffle(int numberOfSwaps) {
+        // Inclusive
+        int numOfCards = this.cardsLeft();
+        Random r = new Random();
 
         // Shuffling a deck containing one card is nonsensical.
-        if (right > 1) {
+        if (numOfCards > 1) {
             for (int i = 0; i < numberOfSwaps; i++) {
+                int pos1 = r.nextInt(numOfCards);
+                int pos2 = r.nextInt(numOfCards);
 
+                swap(pos1, pos2);
             }
         }
     }
