@@ -12,4 +12,16 @@ public class CardTest {
         Card card = new Card(0);
         assertEquals(0, card.getCardId());
     }
+
+    @Test
+    public void getCardIdTest() {
+        Card card = new Card(12);
+        assertEquals(12, card.getCardId());
+    }
+
+    @Test
+    public void getCardValueTest() {
+        Card card = new Card(11);
+        assertEquals(10, card.getCardValue());
+    }
 }
