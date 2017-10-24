@@ -22,8 +22,23 @@ public class Deck {
      *
      * @return Returns an ArrayList of cards generated in the same order they are listed in CardType.
      */
-    public ArrayList<Card> generateNewDeck() {
+    private ArrayList<Card> generateNewDeck() {
+        int numOfCardTypes = 13;
+        int numOfCardsPerType = 4;
+        ArrayList<Card> d = new ArrayList<Card>();
 
+        for (int i = 0; i < numOfCardTypes; i++) {
+            // Generate four card objects per type.
+            for (int j = 0; j < numOfCardsPerType; j++) {
+                d.add(new Card(i));
+            }
+        }
+
+        return d;
+    }
+
+    public int cardsLeft() {
+        return deck.size();
     }
 
     /**
