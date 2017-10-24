@@ -13,6 +13,25 @@ public class DeckTest {
     }
 
     @Test
+    /**
+     * Test that the right number of each card is generated as expected. That is, in the order
+     * that they are defined in the enum CardType.
+     */
+    public void correctCards() {
+        Deck d = new Deck();
+        ArrayList<Card> cardArrayList = d.getArrayList();
+
+        int currId = 0;
+        for (int i = 0; i < 52; i++) {
+            if (i % 4 == 0 && i != 0) {
+                currId += 1;
+            }
+
+            assertEquals(currId, cardArrayList.get(i).getCardId());
+        }
+    }
+
+    @Test
     public void shuffleTest() {
     }
 
