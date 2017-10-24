@@ -90,11 +90,20 @@ public class Deck {
     }
 
     /**
-     * Removes the first Card object from the deck.
+     * Removes the last Card object from the deck if it isn't empty.
      *
-     * @return Returns a Card object from the Arraylist.
+     * @return Returns a Card object from the Arraylist or null if the deck is empty.
      */
-    public Card dealCard() {
+    public Card getCard() {
+        Card c = null;
+        int numOfCards = this.cardsLeft();
+        if (numOfCards > 0) {
+            // Last element in the ArrayList
+            c = deck.remove(numOfCards-1);
+        }
+
+        return c;
+    }
 
     /**
      * Returns the ArrayList object which is the internal representation of the deck.
