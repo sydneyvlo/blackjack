@@ -71,7 +71,17 @@ public class DeckTest {
     }
 
     @Test
-    public void dealCardTest() {
+    /**
+     * Test whether or not the getCard function removes the last card from the ArrayList.
+     */
+    public void getCardTest() {
+        Deck d = new Deck();
+        int size = d.cardsLeft();
+
+        Card c = d.getCard();
+
+        assertEquals(size-1, d.cardsLeft());
+        assertEquals(12, c.getCardId());
     }
 
 }
