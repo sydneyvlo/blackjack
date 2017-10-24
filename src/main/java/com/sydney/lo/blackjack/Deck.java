@@ -57,5 +57,13 @@ public class Deck {
      */
     public Card dealCard() {
 
+    /**
+     * Returns the ArrayList object which is the internal representation of the deck.
+     * This function is mainly used for testing purposes.
+     *
+     * @return ArrayList object holding cards.
+     */
+    public ArrayList<Card> getArrayList() {
+        return deck;
     }
 }
