@@ -53,6 +53,33 @@ public class Deck {
      */
     public void shuffle(ArrayList<Card> deck) {
 
+        // Shuffling a deck containing one card is nonsensical.
+        if (right > 1) {
+            for (int i = 0; i < numberOfSwaps; i++) {
+
+            }
+        }
+    }
+
+    /**
+     * Swaps the element in pos1 with the element in pos2.
+     *
+     * @param pos1 The index of the first element that will be apart of the swap.
+     * @param pos2 The index of the second element that will be apart of the swap.
+     */
+    private void swap(int pos1, int pos2) {
+        // Make sure the indices are valid.
+        if (pos1 >= this.cardsLeft() || pos2 >= this.cardsLeft()) {
+            return;
+        } else {
+            Card temp = deck.get(pos1);
+
+            // Store the element at pos2 at pos1.
+            deck.set(pos1, deck.get(pos2));
+
+            // Store the element at pos1 at pos2.
+            deck.set(pos2, temp);
+        }
     }
 
     /**
