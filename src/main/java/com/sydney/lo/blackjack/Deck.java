@@ -37,6 +37,11 @@ public class Deck {
         return d;
     }
 
+    /**
+     * Returns the number of remaining cards in the deck.
+     *
+     * @return An int value that represents the number of cards left in the deck.
+     */
     public int cardsLeft() {
         return deck.size();
     }
