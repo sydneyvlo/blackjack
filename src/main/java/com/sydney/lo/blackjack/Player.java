@@ -56,8 +56,8 @@ public class Player {
     public String takeTurn() {
         // Print out a prompt to the user.
         String prompt = "Here is your hand's value: " + this.getHandValue()
-                + "\nEnter 'h' to hit or 's' to stay.";
-        System.out.println(prompt);
+                + "\nEnter 'h' to hit or 's' to stay: "  ;
+        System.out.print(prompt);
 
         Scanner s = new Scanner(System.in);
         String userInput = s.next();
@@ -70,5 +70,13 @@ public class Player {
         }
 
         return action;
+    }
+
+    /**
+     * Remove all cards from the hand ArrayList and set the handValue to 0.
+     */
+    public void resetHand() {
+        hand.clear();
+        handValue = 0;
     }
 }
